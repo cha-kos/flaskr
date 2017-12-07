@@ -13,6 +13,7 @@ app.config.update(dict(
     USERNAME='admin',
     PASSWORD='default'
 ))
+
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 def connect_db():
@@ -28,7 +29,6 @@ def init_db():
     db.commit()
 
 @app.cli.command('initdb')
-
 def initdb_command():
     """Initializes the database."""
     init_db()
